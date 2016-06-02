@@ -1,15 +1,9 @@
 var Event = require('geval');
-var EventSource = require('event-source');
+var EventSource = require('eventsource');
 
 module.exports = Essey;
 
 function Essey (url, options) {
-  if (options === true) {
-    options = {
-      withCredentials: true
-    };
-  }
-
   var es = new EventSource(url, options);
   var essey = {
     onData: Event(function (broadcast) {
@@ -27,5 +21,17 @@ function Essey (url, options) {
     close: es.close.bind(es)
   };
 
+  essey.onMessage = Event(function (broadcast) {
+    essey.onData(parseMessage(broadcast));
+  });
+
   return essey;
+}
+
+function parseMessage (cb) {
+  return function (message) {
+    console.log(message);
+    // do stuff
+    cb(message);
+  };
 }
