@@ -1,6 +1,6 @@
 {
   "name": "essey",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "An SSE EventSource that doesn't suck",
   "main": "index.js",
   "scripts": {
