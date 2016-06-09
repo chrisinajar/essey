@@ -34,7 +34,7 @@ Type: `object`
 
 The headers to send with the request.
 
-#### `essey.onData(handler)` -> `function`
+#### `essey.onData(listener)` -> `function`
 
 ##### listener
 
