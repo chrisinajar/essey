@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/chrisinajar/essey#readme",
   "devDependencies": {
+    "express": "^4.13.4",
     "semistandard": "^8.0.0",
     "tape": "^4.5.1",
     "zuul": "^3.10.1"
