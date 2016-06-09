@@ -1,10 +1,12 @@
 var Event = require('geval');
 var EventSource = require('eventsource');
+var isFunction = require('is-function');
 
 module.exports = Essey;
 
 function Essey (url, options) {
   var es = new EventSource(url, options);
+
   var essey = {
     onData: Event(function (broadcast) {
       es.onmessage = broadcast;
@@ -18,7 +20,13 @@ function Essey (url, options) {
     onOpen: Event(function (broadcast) {
       es.onopen = broadcast;
     }),
-    close: es.close.bind(es)
+    close: function () {
+      es.close();
+      // add close event
+      if (isFunction(es.onclose)) {
+        es.onclose();
+      }
+    }
   };
 
   essey.onMessage = Event(function (broadcast) {

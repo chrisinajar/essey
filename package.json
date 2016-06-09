@@ -4,7 +4,8 @@
   "description": "An SSE EventSource that doesn't suck",
   "main": "index.js",
   "scripts": {
-    "test": "semistandard && tape test.js | tap-spec"
+    "local": "semistandard && node ./test/server.js & zuul --local --open -- ./test/test.js",
+    "test": "semistandard && node ./test/server.js & zuul -- ./test/test.js"
   },
   "repository": {
     "type": "git",
@@ -25,12 +26,13 @@
   "homepage": "https://github.com/chrisinajar/essey#readme",
   "devDependencies": {
     "semistandard": "^8.0.0",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.5.1"
+    "tape": "^4.5.1",
+    "zuul": "^3.10.1"
   },
   "dependencies": {
     "eventsource": "^0.2.1",
     "geval": "^2.1.1",
-    "global": "^4.3.0"
+    "global": "^4.3.0",
+    "is-function": "^1.0.1"
   }
 }
