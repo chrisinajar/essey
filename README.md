@@ -16,8 +16,63 @@ eventSource.onData(handleData);
 eventSource.onError(handleError);
 ```
 
+# API
+
+#### `Essey(url, [options])` -> `essey`
+Returns an Essey instance, passing **options** directly to the underlying [eventsource](https://www.npmjs.com/package/eventsource).
+
+##### url
+
+*Required*  
+Type: `string`  
+
+The URL to connect to and read SSE data from.
+
+##### options.headers
+
+Type: `object`  
+
+The headers to send with the request.
+
+#### `essey.onData(handler)` -> `function`
+
+##### listener
+
+Type: `function`  
+Arguments: `message`
+
+Called when any messages are received, wrapping `eventsource.onmessage`. Returns an unlisten function.
+
+#### `essey.onError(listener)` -> `function`
+
+##### listener
+
+Type: `function`  
+Arguments: `err`
+
+Called when any errors occur, wrapping `eventsource.onerror`. Returns an unlisten function.
+
+#### `essey.onOpen(listener)` -> `function`
+
+##### listener
+
+Type: `function`  
+Arguments: None
+
+Called when the connection opens, wrapping `eventsource.onopen`. Returns an unlisten function.
+
+#### `essey.onClose(listener)` -> `function`
+
+##### listener
+
+Type: `function`  
+Arguments: None
+
+Called when the connection closes, wrapping `eventsource.onclose`. Returns an unlisten function.
+
 
 # How To Authenticate
+
 SSE authentication sucks. By default, `EventSource`s do not let you pass custom headers. There are two basic techniques I recommend for getting around this problem...
 
 #### Use The Polyfill
