@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "local": "semistandard && node ./test/server.js & zuul --local --open -- ./test/test.js",
-    "test": "semistandard && node ./test/server.js & zuul -- ./test/test.js"
+    "test": "semistandard && zuul -- ./test/test.js"
   },
   "repository": {
     "type": "git",
