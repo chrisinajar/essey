@@ -31,6 +31,6 @@
   "dependencies": {
     "eventsource": "^0.2.1",
     "geval": "^2.1.1",
-    "global": "^4.3.0"
+    "global": "^4.3.1"
   }
 }
