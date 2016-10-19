@@ -38,7 +38,6 @@ function Essey (url, options) {
 
 function parseMessage (cb) {
   return function (message) {
-    console.log(message);
     // do stuff
     cb(message);
   };
