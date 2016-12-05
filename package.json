@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/chrisinajar/essey#readme",
   "devDependencies": {
-    "semistandard": "^8.0.0",
+    "semistandard": "^9.2.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.5.1"
   },
