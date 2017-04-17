@@ -29,7 +29,7 @@
     "tape": "^4.5.1"
   },
   "dependencies": {
-    "eventsource": "^0.2.1",
+    "eventsource": "^1.0.0",
     "geval": "^2.1.1",
     "global": "^4.3.0"
   }
